@@ -14,9 +14,11 @@ import Navb from './component/Navb';
 function App() {
 
   return (
-    <div className="App">
-      <Navb />
-      <div className="App-header">
+    <div >
+      <div >
+        <Navb />
+      </div>
+      <div className='App'>
         <Routes>
           <Route path="*" element={<Navigate to="/list" />} />
           <Route path='/list' element={<Lists />}></Route>

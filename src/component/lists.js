@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Form from 'react-bootstrap/Form';
+import Table from 'react-bootstrap/Table';
 function User() {
 
     const [users, setUser] = useState([{
@@ -24,11 +24,10 @@ function User() {
             .catch(errr => console.log(errr))
     }
     return (
-
-        <Form>
-            <h3 align="center">Persons List</h3>
-            <Link to='/create' className='btn btn-success'>ADD +</Link>
-            <table className="table table-striped" style={{ marginTop: 20 }}>
+        <div>
+            <h3 className="form-group" align="center">Persons List</h3>
+            <Link to='/create' className='btn btn-success form-group'>ADD +</Link>
+            <Table striped bordered hover className="table table-striped form-group" style={{ marginTop: 20 }}>
 
                 <thead>
                     <tr>
@@ -38,6 +37,8 @@ function User() {
                         <th colSpan="2">Action</th>
                     </tr>
                 </thead>
+
+
                 <tbody>
                     {
                         users.map((user) => {
@@ -57,8 +58,12 @@ function User() {
                         })
                     }
                 </tbody>
-            </table>
-        </Form>
+
+            </Table>
+
+
+
+        </div>
 
     );
 };
