@@ -1,34 +1,33 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, Collapse, BImg } from 'bootstrap-4-react';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import { Link } from 'react-router-dom'
 
-export default class Navb extends Component {
-    render() {
 
-        return (
-            <React.Fragment>
-                <Navbar expand="lg" dark bg="dark" mb="0">
-                    <Navbar.Brand href="/">
-                        <BImg
-                            src={"favicon.ico"}
-                            width="30"
-                            height="30"
-                            display="inline-block"
-                            align="top"
-                            mr="1"
-                        />
-                        Human Resources
-                    </Navbar.Brand>
+const Nabv = () => {
+    return (
+        <Navbar expand='lg' bg='primary' variant='dark' className='shadow'>
 
-                    <Navbar.Toggler target="#navbarColor1" />
-                    <Collapse navbar id="navbarColor1">
-                        <Navbar.Nav mr="auto">
-                            <Nav.ItemLink href="list">list</Nav.ItemLink>
-                            <Nav.ItemLink href="create">create</Nav.ItemLink>
-
-                        </Navbar.Nav>
-                    </Collapse>
-                </Navbar>
-            </React.Fragment>
-        )
-    }
+            <Navbar.Brand className='font-weight-bolder text-white'>
+                <i class="fa-solid fa-cubes fa-2xl me-2 ms-2"></i>
+                CRUD
+            </Navbar.Brand>
+            <Nav className='mr-auto'>
+                <Nav.Link
+                    className='font-weight-bolder text-white'
+                    to='/list'
+                    as={Link}
+                >
+                    List
+                </Nav.Link>
+                <Nav.Link
+                    className='font-weight-bolder text-white'
+                    to='/create'
+                    as={Link}
+                >
+                    Create
+                </Nav.Link>
+            </Nav>
+        </Navbar>
+    )
 }
+export default Nabv;

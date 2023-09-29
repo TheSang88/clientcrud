@@ -20,13 +20,14 @@ function CreateUser() {
     return (
         <div>
             <h3>Add New User</h3>
-            <form onSubmit={Submit}>
+            <form onSubmit={Submit} >
                 <div className="form-group">
                     <label>Person Name: </label>
                     <input type="text" className="form-control"
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
+
                 <div className="form-group">
                     <label>Email: </label>
                     <input type="text" className="form-control"
