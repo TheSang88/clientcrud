@@ -1,0 +1,67 @@
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
+import { useParams,useNavigate } from 'react-router-dom';
+
+function EditUser() {
+    const {id}=useParams();
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [age, setAge] = useState();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/User/getuser/'+id)
+            .then(result => {console.log(result)
+            setName(result.data.name)
+            setEmail(result.data.email)
+            setAge(result.data.age)
+            })
+            .catch(err => console.log(err))
+            
+    },[id])
+
+
+
+    const Updata = (e) => {
+        e.preventDefault();
+        axios.put("http://localhost:3001/User/edituser/"+id, { name, email, age })
+            .then(result => {
+                console.log(result)
+                navigate('/list');
+            })
+            .catch(err => console.log('sad' + err))
+    }
+
+    return (
+        <div>
+            <h3>Edit User</h3>
+            <form onSubmit={Updata}>
+                <div className="form-group">
+                    <label>Person Name: </label>
+                    <input type="text" 
+                    placeholder='Enter name'
+                    className="form-control"
+                        value={name} onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Company Name: </label>
+                    <input type="text" className="form-control"
+                        value={email} onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Age: </label>
+                    <input type="text" className="form-control" 
+                        value={age} onChange={(e) => setAge(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <button className='btn btn-success'>Submit</button>
+                </div>
+            </form>
+        </div>
+    );
+
+};
+export default EditUser;
