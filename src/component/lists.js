@@ -9,13 +9,13 @@ function User() {
     }]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/User/listuser')
+        axios.get('https://servercrud.onrender.com/User/listuser')
             .then(result => setUser(result.data))
             .catch(err => console.log(err))
     }, [])
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/User/deleteUser/' + id)
+        axios.delete('https://servercrud.onrender.com/User/deleteUser/' + id)
             .then(res => {
                 console.log(res)
                 window.location.reload()

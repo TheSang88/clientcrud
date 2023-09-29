@@ -10,7 +10,7 @@ function EditUser() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:3001/User/getuser/' + id)
+        axios.get('https://servercrud.onrender.com/User/getuser/' + id)
             .then(result => {
                 console.log(result)
                 setName(result.data.name)
@@ -25,7 +25,7 @@ function EditUser() {
 
     const Updata = (e) => {
         e.preventDefault();
-        axios.put("http://localhost:3001/User/edituser/" + id, { name, email, age })
+        axios.put("https://servercrud.onrender.com/User/edituser/" + id, { name, email, age })
             .then(result => {
                 console.log(result)
                 navigate('/list');
