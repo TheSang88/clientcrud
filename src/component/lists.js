@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import Form from 'react-bootstrap/Form';
 function User() {
 
     const [users, setUser] = useState([{
@@ -24,7 +24,8 @@ function User() {
             .catch(errr => console.log(errr))
     }
     return (
-        <div>
+
+        <Form>
             <h3 align="center">Persons List</h3>
             <Link to='/create' className='btn btn-success'>ADD +</Link>
             <table className="table table-striped" style={{ marginTop: 20 }}>
@@ -57,7 +58,8 @@ function User() {
                     }
                 </tbody>
             </table>
-        </div>
+        </Form>
+
     );
 };
 export default User;

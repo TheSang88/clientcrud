@@ -1,33 +1,29 @@
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import { Link } from 'react-router-dom'
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+import { Link } from 'react-router-dom'
 
 const Nabv = () => {
     return (
-        <Navbar expand='lg' bg='primary' variant='dark' className='shadow'>
-
-            <Navbar.Brand className='font-weight-bolder text-white'>
+        <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
                 <i class="fa-solid fa-cubes fa-2xl me-2 ms-2"></i>
-                CRUD
-            </Navbar.Brand>
-            <Nav className='mr-auto'>
-                <Nav.Link
-                    className='font-weight-bolder text-white'
-                    to='/list'
-                    as={Link}
-                >
-                    List
-                </Nav.Link>
-                <Nav.Link
-                    className='font-weight-bolder text-white'
-                    to='/create'
-                    as={Link}
-                >
-                    Create
-                </Nav.Link>
-            </Nav>
+                <Navbar.Brand href="#home">CRUD</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link to='/list'
+                            as={Link} >List</Nav.Link>
+                        <Nav.Link to='/create'
+                            as={Link}>create</Nav.Link>
+
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
         </Navbar>
     )
 }
+
 export default Nabv;
