@@ -43,18 +43,25 @@ function EditUser() {
                         placeholder='Enter name'
                         className="form-control"
                         value={name} onChange={(e) => setName(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="form-group">
                     <label>Email: </label>
-                    <input type="text" className="form-control"
+                    <input type="text"
+                        className="form-control"
+                        placeholder='Enter Email'
                         value={email} onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="form-group">
                     <label>Age: </label>
-                    <input type="text" className="form-control"
+                    <input type="text"
+                        placeholder='Enter Age'
+                        className="form-control"
                         value={age} onChange={(e) => setAge(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="form-group">

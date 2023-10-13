@@ -23,21 +23,30 @@ function CreateUser() {
             <form onSubmit={Submit} >
                 <div className="form-group">
                     <label>Person Name: </label>
-                    <input type="text" className="form-control"
+                    <input type="text"
+                        placeholder='Enter name'
+                        className="form-control"
                         onChange={(e) => setName(e.target.value)}
+                        required
                     />
                 </div>
 
                 <div className="form-group">
                     <label>Email: </label>
-                    <input type="text" className="form-control"
+                    <input type="text"
+                        placeholder='Enter Email'
+                        className="form-control"
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="form-group">
                     <label>Age: </label>
-                    <input type="text" className="form-control"
+                    <input type="text"
+                        placeholder='Enter Age'
+                        className="form-control"
                         onChange={(e) => setAge(e.target.value)}
+                        required
                     />
                 </div>
                 <button className='btn btn-success mt-2'>Submit</button>
