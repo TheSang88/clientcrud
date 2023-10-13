@@ -48,7 +48,7 @@ function EditUser() {
                 </div>
                 <div className="form-group">
                     <label>Email: </label>
-                    <input type="text"
+                    <input type="email"
                         className="form-control"
                         placeholder='Enter Email'
                         value={email} onChange={(e) => setEmail(e.target.value)}

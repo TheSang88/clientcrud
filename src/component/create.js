@@ -33,7 +33,7 @@ function CreateUser() {
 
                 <div className="form-group">
                     <label>Email: </label>
-                    <input type="text"
+                    <input type="email"
                         placeholder='Enter Email'
                         className="form-control"
                         onChange={(e) => setEmail(e.target.value)}
