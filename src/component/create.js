@@ -40,7 +40,7 @@ function CreateUser() {
                         onChange={(e) => setAge(e.target.value)}
                     />
                 </div>
-                <button className='btn btn-success'>Submit</button>
+                <button className='btn btn-success mt-2'>Submit</button>
             </form>
         </div>
     );

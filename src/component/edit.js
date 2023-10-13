@@ -58,7 +58,7 @@ function EditUser() {
                     />
                 </div>
                 <div className="form-group">
-                    <button className='btn btn-success'>Updata</button>
+                    <button className='btn btn-success mt-2'>Updata</button>
                 </div>
             </form>
         </div>

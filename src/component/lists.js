@@ -11,7 +11,6 @@ function User() {
 
     const [loading, setLoading] = useState(false);
 
-
     useEffect(() => {
         setLoading(true);
         axios.get('https://servercrud.onrender.com/User/listuser')
@@ -25,10 +24,6 @@ function User() {
             })
     }, [])
 
-
-
-
-
     const handleDelete = (id) => {
         axios.delete('https://servercrud.onrender.com/User/deleteUser/' + id)
             .then(res => {
@@ -39,21 +34,11 @@ function User() {
             .catch(errr => console.log(errr))
     }
 
-
-
-
-
-
-
-
     return (
         <div>
-
-
             <h3 className="form-group" align="center">Persons List</h3>
             <Link to='/create' className='btn btn-success form-group'>ADD +</Link>
             <Table striped bordered hover className="table table-striped form-group" style={{ marginTop: 20 }}>
-
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -72,7 +57,7 @@ function User() {
                                         <td>{user.email}</td>
                                         <td>{user.age}</td>
                                         <td>
-                                            <Link to={'/edit/' + user._id} className='btn btn-success'>update</Link>
+                                            <Link to={'/edit/' + user._id} className='btn btn-success me-2'>update</Link>
                                             <button className='btn btn-danger'
                                                 onClick={(e) => handleDelete(user._id)}
                                             >Delete</button>
@@ -84,11 +69,7 @@ function User() {
                     </tbody>
                 )}
             </Table>
-
-
-
         </div>
-
     );
 };
 export default User;
