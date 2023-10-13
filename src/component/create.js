@@ -42,7 +42,7 @@ function CreateUser() {
                 </div>
                 <div className="form-group">
                     <label>Age: </label>
-                    <input type="text"
+                    <input type="number" min="1" max="150" step="1"
                         placeholder='Enter Age'
                         className="form-control"
                         onChange={(e) => setAge(e.target.value)}
